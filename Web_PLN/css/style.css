@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f1f5f9;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(90deg, #0f766e, #06b6d4);
+  color: white;
+  padding: 20px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* Layout */
+.container {
+  padding: 32px;
+  padding-top: 150px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 12px 0 20px;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* Button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #0f766e;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #115e59;
+}
+
+/* Section */
+.section-title {
+  margin-top: 40px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  background: #0f766e;
+  color: white;
+  padding: 32px;
+}
+
+.footer-content {
+  padding: 0;
+}
+
+footer hr {
+  margin: 24px 0;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+footer p {
+  font-size: 14px;
+}
+
+.copyright {
+  text-align: center;
+  opacity: 0.9;
+}

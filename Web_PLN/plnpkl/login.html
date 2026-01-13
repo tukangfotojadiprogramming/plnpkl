@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Dashboard PLN</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #0f766e, #06b6d4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-card {
+        background: white;
+        width: 380px;
+        padding: 32px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 6px;
+        font-size: 24px;
+        color: #0f766e;
+    }
+
+    p {
+        text-align: center;
+        font-size: 14px;
+        color: #64748b;
+        margin-bottom: 24px;
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0 16px;
+        border-radius: 10px;
+        border: 1px solid #cbd5e1;
+        font-size: 14px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #0f766e;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #0f766e;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #115e59;
+    }
+
+    .switch {
+        text-align: center;
+        margin-top: 16px;
+        font-size: 14px;
+    }
+
+    .switch a {
+        color: #0f766e;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .footer-text {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="login-card">
+
+    <!-- LOGIN -->
+    <div id="loginForm">
+        <h1>Login</h1>
+        <p>Dashboard PLN</p>
+
+        <form onsubmit="login(event)">
+            <label>Username</label>
+            <input type="text" id="loginUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" required>
+
+            <button type="submit">Masuk</button>
+        </form>
+
+        <div class="switch">
+            Belum punya akun?
+            <a onclick="showRegister()">Sign Up</a>
+        </div>
+        </div>
+
+        <!-- REGISTER -->
+        <div id="registerForm" class="hidden">
+        <h1>Sign Up</h1>
+        <p>Daftar Akun Baru</p>
+
+        <form onsubmit="register(event)">
+            <label>Username</label>
+            <input type="text" id="regUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="regPassword" required>
+
+            <label>Pos-El</label>
+            <input type="password" id="regPassword" required>
+            
+
+            <button type="submit">Daftar</button>
+        </form>
+
+        <div class="switch">
+            Sudah punya akun?
+            <a onclick="showLogin()">Login</a>
+        </div>
+        </div>
+
+        <div class="footer-text">
+        © 2026 PT PLN (Persero)
+        </div>
+
+    </div>
+
+    <script>
+        function showRegister() {
+        document.getElementById("loginForm").classList.add("hidden");
+        document.getElementById("registerForm").classList.remove("hidden");
+        }
+
+        function showLogin() {
+        document.getElementById("registerForm").classList.add("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+        }
+
+        function register(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("regUsername").value;
+        const password = document.getElementById("regPassword").value;
+
+        localStorage.setItem("plnUser", JSON.stringify({ username, password }));
+
+        alert("Registrasi berhasil, silakan login");
+        showLogin();
+        }
+
+    function login(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+
+        const user = JSON.parse(localStorage.getItem("plnUser"));
+
+        if (user && username === user.username && password === user.password) {
+            alert("Login berhasil");
+            window.location.href = "dashboard.html";
+        } else {
+            alert("Username atau password salah");
+        }
+        }
+    </script>
+
+</body>
+</html>
