@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Pengusahaan ULP Gerung</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:'Inter',sans-serif}
+body{margin:0;background:#f1f5f9}
+header{
+  background:#eee;
+  padding:16px 32px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{margin:0;font-size:22px}
+.container{
+  display:grid;
+  grid-template-columns:260px 1fr 420px;
+  gap:20px;
+  padding:20px;
+}
+
+/* LEFT */
+.left{
+  background:#14b8c4;
+  color:#fff;
+  border-radius:24px;
+  padding:20px;
+}
+.left .box{
+  background:#67e8f9;
+  color:#0f172a;
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.big{font-size:28px;font-weight:700}
+
+/* CENTER */
+.center .card{
+  background:#fff;
+  border-radius:20px;
+  padding:16px;
+  margin-bottom:16px;
+}
+.map{
+  height:260px;
+  background:#c7f9cc;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+}
+.table th,.table td{
+  padding:8px;
+  border-bottom:1px solid #e5e7eb;
+  text-align:left;
+}
+
+/* RIGHT */
+.right .card{
+  background:#fff;
+  border-radius:20px;
+  padding:16px;
+  margin-bottom:16px;
+}
+.asset{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
+}
+.asset div{
+  background:#2563eb;
+  color:#fff;
+  border-radius:12px;
+  padding:10px;
+  text-align:center;
+}
+.org{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.person{
+  background:#e0f2fe;
+  border-radius:14px;
+  padding:10px;
+  text-align:center;
+  font-size:13px;
+}
+.person img{
+  width:100%;
+  border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <strong>Danantara Indonesia</strong>
+  <h1>DATA PENGUSAHAAN ULP GERUNG</h1>
+  <strong>Periode: Des 2025</strong>
+</header>
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left">
+    <div class="box">
+      Jumlah Pelanggan<br>
+      <span class="big">77.458</span>
+    </div>
+    <div class="box">Pasca: 13.374</div>
+    <div class="box">Prabayar: 64.084</div>
+    <div class="box">
+      VA Total<br>
+      <span class="big">86.308.650</span>
+    </div>
+    <div class="box">
+      kWh Total<br>
+      <span class="big">8.866.930</span>
+    </div>
+    <div class="box">
+      Rupiah Total<br>
+      <span class="big">7,78 M</span>
+    </div>
+    <div class="box">Jumlah Personil: 53</div>
+  </div>
+
+  <!-- CENTER -->
+  <div class="center">
+    <div class="card">
+      <div class="map">PETA WILAYAH ULP GERUNG</div>
+    </div>
+
+    <div class="card">
+      <strong>Data Pelanggan per Desa</strong>
+      <table class="table">
+        <tr><th>Desa</th><th>Pelanggan</th><th>Daya (kVA)</th></tr>
+        <tr><td>Gerung Utara</td><td>4.952</td><td>3.610</td></tr>
+        <tr><td>Jagaraga</td><td>4.050</td><td>1.210</td></tr>
+        <tr><td>Lembar Selatan</td><td>3.895</td><td>4.830</td></tr>
+        <tr><td>Banyurip</td><td>3.767</td><td>1.760</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <strong>Diagram (Placeholder)</strong>
+      <div class="map">Pie / Bar Chart</div>
+    </div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+    <div class="card">
+      <strong>DATA ASET</strong>
+      <div class="asset">
+        <div>JTM<br>299 km</div>
+        <div>Gardu<br>290</div>
+        <div>Daya<br>40.560</div>
+        <div>Penyulang<br>6</div>
+        <div>Keypoint<br>39</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <strong>Struktur Organisasi</strong>
+      <div class="org">
+        <div class="person">
+          <img src="https://via.placeholder.com/150">
+          Manager ULP
+        </div>
+        <div class="person">
+          <img src="https://via.placeholder.com/150">
+          TL Teknik
+        </div>
+        <div class="person">
+          <img src="https://via.placeholder.com/150">
+          TL Niaga
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
